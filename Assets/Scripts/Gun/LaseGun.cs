@@ -35,6 +35,7 @@ public class LaseGun : MonoBehaviour
         audioData.clip = otherClip;
         if ( magazine > 0  && !reloading){
             if (nextShot + fireRate < Time.time){
+                transform.parent.GetComponent<Health>().healthUpdate(-10);
                 for (float i = 0; i < pellets; i++){
                     muzzleFlash.Play();
                     audioData.Play();
@@ -42,7 +43,7 @@ public class LaseGun : MonoBehaviour
                     if (Physics.Raycast(laserPos.position, direction, out  RaycastHit hit, float.MaxValue, Mask))
                     {
                         if (hit.transform.gameObject.tag == "Enemie"){
-                            hit.transform.gameObject.GetComponent<EnemiesHealth>().healthUpdate(-damagePerPellets);
+                            hit.transform.gameObject.GetComponent<Health>().healthUpdate(-damagePerPellets);
                             // Debug.Log("Enemie hit");
                         }
                          if (hit.rigidbody){

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2626873976638872939}
   - component: {fileID: 3875642627632574258}
   - component: {fileID: 2114876679564296043}
+  - component: {fileID: 515993114791512103}
   m_Layer: 0
   m_Name: C_Bullet
   m_TagString: Untagged
@@ -100,6 +101,7 @@ MonoBehaviour:
   life: 3
   damage: 10
   impactForce: 100
+  Explosion: {fileID: 2390632912872477226, guid: 2b791971337f6d34ab8ad92d156d4ad1, type: 3}
 --- !u!54 &2114876679564296043
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,3 +118,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &515993114791512103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604183003945728083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026879309, y: 0.026879208, z: 0.15040821}
+  m_Center: {x: 0.0000006677583, y: 0.000000014901161, z: 0.0052029863}

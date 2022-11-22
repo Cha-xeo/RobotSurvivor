@@ -1247,17 +1247,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reticle: {fileID: 0}
-  bulletPrefab: {fileID: 6540518255268154743, guid: 5c89d3f70d8efe44bbf12c9526a5ed1d, type: 3}
-  bulletSpeed: 25
+  bulletPrefab: {fileID: 3875642627632574258, guid: e71d63591ce5a17458e29676cfa94a7d, type: 3}
+  bulletSpeed: 100
   reloadingTime: 2
   maxMagazine: 30
-  magazine: 0
-  pellets: 0
+  magazine: 30
+  pellets: 1
   muzzleFlash: {fileID: 0}
   spread: {x: 0.1, y: 0.1, z: 0.1}
-  AddSpread: 0
-  fireRate: 0
-  otherClip: {fileID: 0}
+  AddSpread: 1
+  fireRate: 0.5
+  otherClip: {fileID: 8300000, guid: af66162561d2eed40ad49268cab318bb, type: 3}
 --- !u!114 &2939912041232547144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,17 +1276,17 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   maxMagazine: 30
   magazine: 30
-  damagePerPellets: 0
-  impactForce: 0
+  damagePerPellets: 5
+  impactForce: 200
   spread: {x: 0.1, y: 0.1, z: 0.1}
-  BulletTrail: {fileID: 0}
+  BulletTrail: {fileID: 1106619661406378591, guid: 62eaa11ece535b449a45c3057009b423, type: 3}
   Mask:
     serializedVersion: 2
-    m_Bits: 0
-  pellets: 0
+    m_Bits: 1
+  pellets: 6
   fireRate: 0.5
-  AddSpread: 0
-  otherClip: {fileID: 0}
+  AddSpread: 1
+  otherClip: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
 --- !u!82 &8519905714503410688
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2747,9 +2747,9 @@ GameObject:
   - component: {fileID: 3415533318885307429}
   - component: {fileID: 244521147398545007}
   - component: {fileID: 2389185010336076357}
-  - component: {fileID: 8511594678380172030}
   - component: {fileID: 5938632002322759662}
-  - component: {fileID: 7915112342373331031}
+  - component: {fileID: 7132426089674745931}
+  - component: {fileID: 6984946850198637094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2857,24 +2857,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &8511594678380172030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781986884589712888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcebe1be26ad5fb428782774ef1780c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 0}
-  _maxHealth: 100
-  _moveSpeed: 5
-  _sprintBoost: 10
-  _turnSpeed: 0.05
-  _lookTurnSpeed: 0.02
 --- !u!114 &5938632002322759662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2889,7 +2871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guns: []
   guns: 0
---- !u!114 &7915112342373331031
+--- !u!114 &7132426089674745931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2898,7 +2880,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 781986884589712888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea4c85b7eaa7d684388befe0c9a247c9, type: 3}
+  m_Script: {fileID: 11500000, guid: db1c7c03462a44749a3e098730d8abb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
+  _maxHealth: 100
+  _moveSpeed: 5
+  _sprintBoost: 10
+  _turnSpeed: 0.05
+  _lookTurnSpeed: 0.02
+  _force: 10
+--- !u!114 &6984946850198637094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781986884589712888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24eb273b373a24341aea36bf6f41b702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &781986884589712890

@@ -14,11 +14,11 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        // playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        // Health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         // healthBar = GetComponent<Slider>();
-        // healthBar.fillAmount = Mathf.InverseLerp(0, playerHealth.health, playerHealth.MaxHealth);
+        // healthBar.fillAmount = Mathf.InverseLerp(0, Health.health, Health.MaxHealth);
         // healthBar.fillAmount = 0;
-        // healthBar.value = playerHealth.maxHealth;
+        // healthBar.value = Health.maxHealth;
     }
 
     public void SetHealth(float act, float max)

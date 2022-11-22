@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float life = 3;
     public float damage = 10f;
     public float impactForce = 100f;
-
+    public ParticleSystem Explosion;
     void Awake()
     {
         Destroy(gameObject, life);
@@ -15,14 +15,13 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // if (collision.gameObject.GetComponent<Rigidbody>()){
-        //     collision.gameObject.GetComponent<Rigidbody>().AddForce(-hit.normal * impactForce);
-        // }
         if (collision.gameObject.tag == "Enemie"){
-            collision.gameObject.GetComponent<EnemiesHealth>().healthUpdate(-damage);
-            // var aled = Instantiate(collision.gameObject.GetComponent<HitImpact>().Impact, collision.position, Quaternion.LookRotation(hit.normal));
-            // Destroy(aled, 0.5f);
+            collision.gameObject.GetComponent<Health>().healthUpdate(-damage);
+            var aled = Instantiate(Explosion, transform.position, transform.rotation);
+            Destroy(aled, 0.2f);
         }
-        Destroy(gameObject, 0.5f);
-    }  
+        Destroy(gameObject);
+    }
+        private void OnDestroy() {
+        }
 }

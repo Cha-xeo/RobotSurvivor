@@ -13,9 +13,9 @@ public class CharacterMovement : MonoBehaviour
     private AssaultRifle _gun;
     public bool choosegun;
 
-    private PlayerStats _stats;
+    private Stats _stats;
     private void Awake() {
-        _stats = GetComponent<PlayerStats>();
+        _stats = GetComponent<Stats>();
         _input = GetComponent<InputHandler>();
         anime = GetComponent<Animator>();
         _gun1 = transform.GetChild(1).GetComponent<LaseGun>();
@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+        if (_input.Submit) choosegun = !choosegun;
         Vector3 targetVector = new Vector3(_input.InputVector.x, 0,_input.InputVector.y);
         if (_input.Reload){
             if (choosegun){
@@ -32,7 +33,6 @@ public class CharacterMovement : MonoBehaviour
                     StartCoroutine(_gun1.reload());
                 }
         }
-        if (_input.Submit) choosegun = !choosegun;
         if(_input.Fire || _input.Look){
             if (_input.Fire){
                 if (choosegun){

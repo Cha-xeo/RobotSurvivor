@@ -304,12 +304,12 @@ GameObject:
   - component: {fileID: 4307607771367254677}
   - component: {fileID: 4493543120807086825}
   - component: {fileID: 491865784198502419}
-  - component: {fileID: 4394777616585413042}
-  - component: {fileID: 6659621186918020907}
   - component: {fileID: 6285525336101870442}
+  - component: {fileID: 1514445238531948533}
+  - component: {fileID: 1033224168599152902}
   m_Layer: 0
   m_Name: Enemie_1
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,10 +377,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.9337882
-  m_Height: 2.046889
+  m_Radius: 1.43
+  m_Height: 3.58
   m_Direction: 1
-  m_Center: {x: -0.09850085, y: 1.0096134, z: 0}
+  m_Center: {x: 0, y: 1.0096134, z: 0}
 --- !u!195 &4493543120807086825
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -416,31 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGo: {fileID: 0}
---- !u!114 &4394777616585413042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2618237548261693249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81782fb44873f8f429b879d7ff073ac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 50
---- !u!114 &6659621186918020907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2618237548261693249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e912a594db8263a4997993f9b72b38ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  canMove: 1
 --- !u!114 &6285525336101870442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,6 +430,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitEffect: {fileID: 1096893136476370, guid: 24b82347924701148a13c746edfb6b22, type: 3}
+  Impact: {fileID: 0}
+--- !u!114 &1514445238531948533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618237548261693249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1c7c03462a44749a3e098730d8abb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthBar: {fileID: 0}
+  _maxHealth: 50
+  _moveSpeed: 10
+  _sprintBoost: 15
+  _turnSpeed: 0.05
+  _lookTurnSpeed: 0.02
+  _force: 20
+--- !u!114 &1033224168599152902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618237548261693249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24eb273b373a24341aea36bf6f41b702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2618237548261693251
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +737,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2618237548261919599}
+  - component: {fileID: 9111286664286962755}
+  - component: {fileID: 6808833799904673796}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -751,6 +761,33 @@ Transform:
   m_Father: {fileID: 2618237548261919615}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9111286664286962755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618237548261693263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.394882, y: 108.31498, z: 93.38445}
+  m_Center: {x: -4.618225, y: 53.657093, z: 23.525307}
+--- !u!114 &6808833799904673796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2618237548261693263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db227742567035341a7beb0d6d1cc4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axeHitBox: {fileID: 9111286664286962755}
+  axeDamage: 10
 --- !u!1 &2618237548261693265
 GameObject:
   m_ObjectHideFlags: 0

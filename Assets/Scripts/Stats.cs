@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class Stats : MonoBehaviour
 {
     public GameObject HealthBar;
     private float _health;
@@ -15,8 +15,10 @@ public class PlayerStats : MonoBehaviour
             }else if (_health <= 0f) {
                 _health = 0f;
                 // Debug.Log("Player dies");
+                Destroy(gameObject);
             }
-            HealthBar.GetComponent<HealthBar>().SetHealth(_health, maxHealth);
+            if (HealthBar)
+                HealthBar.GetComponent<HealthBar>().SetHealth(_health, maxHealth);
             // Debug.Log($"player has {_health} health");
         }
         get => _health;
@@ -36,6 +38,8 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField]private float _lookTurnSpeed;
     public float lookTurnSpeed {set{_lookTurnSpeed = value;}get => _lookTurnSpeed;}
+    [SerializeField]private float _force;
+    public float force {set{_force = value;}get => _force;}
 
     // private bool slowed = false;
     // private bool doted = false;
@@ -54,7 +58,7 @@ public class PlayerStats : MonoBehaviour
     //     {
     //         if (Time.time > nextDotTick) {
     //             nextDotTick = Time.time  + dotRate;
-    //             gameObject.GetComponent<PlayerHealth>().healthUpdate(-dotDamage);
+    //             gameObject.GetComponent<Health>().healthUpdate(-dotDamage);
     //             // Health -= dotDamage;
     //         }
     //     }
