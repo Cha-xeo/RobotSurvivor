@@ -21,6 +21,7 @@ public class InputHandler : MonoBehaviour
     private Camera Camera;
     private void FixedUpdate()
     {
+        Submit = InputManager.GetInstance().GetSubmitPressed();
         InputVector = InputManager.GetInstance().GetMoveDirection();
         MousePosition = InputManager.GetInstance().GetMousePosition();
         RawMousePosition = InputManager.GetInstance().GetRawMousePosition();
@@ -29,7 +30,6 @@ public class InputHandler : MonoBehaviour
         Shift = InputManager.GetInstance().GetShiftPressed();
         Fire = InputManager.GetInstance().GetFirePressed();
         Look = InputManager.GetInstance().GetLookPressed();
-        Submit = InputManager.GetInstance().GetSubmitPressed();
         Ray ray = Camera.ScreenPointToRay(RawMousePosition);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance: 300f)){
             var target = hitInfo.point; 

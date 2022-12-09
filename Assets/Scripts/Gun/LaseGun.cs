@@ -35,10 +35,10 @@ public class LaseGun : MonoBehaviour
         audioData.clip = otherClip;
         if ( magazine > 0  && !reloading){
             if (nextShot + fireRate < Time.time){
-                transform.parent.GetComponent<Health>().healthUpdate(-10);
+                //transform.parent.GetComponent<Health>().healthUpdate(-10);
                 for (float i = 0; i < pellets; i++){
-                    muzzleFlash.Play();
                     audioData.Play();
+                    muzzleFlash.Emit(1);
                     Vector3 direction = GetDirection();
                     if (Physics.Raycast(laserPos.position, direction, out  RaycastHit hit, float.MaxValue, Mask))
                     {

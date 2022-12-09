@@ -39,7 +39,7 @@ public class AssaultRifle : MonoBehaviour
             if (nextShot + fireRate < Time.time){
                 for (float i = 0; i < pellets; i++){
                     audioData.Play();
-                    muzzleFlash.Play();
+                    muzzleFlash.Emit(1);
                     Vector3 direction = GetDirection();
 
                     var bullet = Instantiate(bulletPrefab, reticle.position, transform.rotation);

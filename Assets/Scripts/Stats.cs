@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public GameObject HealthBar;
-    private float _health;
+    [SerializeField]private float _health;
     public float health {
         set{
             _health = value;
@@ -38,8 +38,20 @@ public class Stats : MonoBehaviour
 
     [SerializeField]private float _lookTurnSpeed;
     public float lookTurnSpeed {set{_lookTurnSpeed = value;}get => _lookTurnSpeed;}
+
+    // damage
     [SerializeField]private float _force;
     public float force {set{_force = value;}get => _force;}
+
+    // can the move
+    [SerializeField]private bool _canMove;
+    public bool canMove { set{ _canMove = value;}get => _canMove; }
+    // attack range
+    [SerializeField]private float _range;
+    public float range { set{ _range = value;}get => _range; }
+    // attack speed
+    [SerializeField]private float _attackSpeed;
+    public float attackSpeed { set{ _attackSpeed = value;}get => _attackSpeed; }
 
     // private bool slowed = false;
     // private bool doted = false;
